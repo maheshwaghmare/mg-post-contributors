@@ -201,7 +201,7 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
  * @since MG Contributors 1.0
  */
  
- add_filter( 'the_content', 'show_contributors_after_post_contents' );	
+ add_filter( 'the_content', 'mg_show_contributors' );	
 
 
  
@@ -212,7 +212,7 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
  */
   
 //	generate contributors list 
-function show_contributors_after_post_contents($content) {
+function mg_show_contributors($content) {
 
 	// assuming you have created a page/post entitled 'debug'	
 	if ($GLOBALS['post']->post_name == 'debug') {
