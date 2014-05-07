@@ -5,8 +5,12 @@ This wordpress plugin helps admin user to select multiple authors of the post an
 
 == Description ==
 
-This plugin help admin user to select multiple authors or contributors of the post, By simply selecting those authors or contributors from post editor window.
-This plugin supports existing post and for new posts.
+This plugin help admin user to select multiple authors or contributors of the post, By simply selecting those authors or contributors from post editor window. 
+This plugin supports existing post and for new posts. 
+
+You can set how contributors shown after post contents by: "Setting->MG Post Contributor" and select options how do you want to show contributors on blog. 
+
+You can also use <code>[mg-post-testimonial]</code> shortcode to show contributors list at sidebar.
 
 
 == Installation ==
