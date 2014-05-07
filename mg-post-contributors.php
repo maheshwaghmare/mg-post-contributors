@@ -18,7 +18,6 @@
  * @copyright       2014 MG Web Themes
  */
 
-
  /**
  * Initialize meta box setup functions
  *
@@ -43,7 +42,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 		add_action( 'save_post', 'mg_save_post_class_meta', 10, 2 );
 	}
 
-
 	 /**
 	 * ('add_meta_boxes') HOOK functions definition to add new meta box
 	 *
@@ -62,7 +60,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 			'default'										// Priority
 		);
 	}
-
 
 	 /**
 	 * call back function of ('add_meta_boxes') to generate meta box structure (labels, list of contributors)
@@ -120,7 +117,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 		}
 		// Meta Box structure ENDs
 
-
 	 /**
 	 * ('save_post') HOOK functions definition to save meta box values
 	 *
@@ -163,7 +159,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 				}
 		}	
 			
-		
 		//	 Set the meta key
 		$meta_key = 'mg-contributors';
 		
@@ -183,7 +178,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 			delete_post_meta( $post_id, $meta_key, $meta_value );
 	}
 
-	
  /**
  * Add Filter to generate contributors list
  * show contributors list after POST->CONTENTS
@@ -307,15 +301,12 @@ function mg_show_contributors($content) {
 		}
 	}
 	
-
 	//Get Post Contetns
 	$content_post = get_post( $post_id );
 	$content = $content_post->post_content;
 
 	return $content . $show_contributors;
-	
 }
-
 
 //	ENQUEUE stylesheet ('style.css')
 function mg_enqueue_style() {
@@ -351,7 +342,6 @@ add_action('admin_menu', 'mg_add_page_fn');
 		}
 	}
 
-	
 	// Register our settings. Add the settings section, and settings fields
 	function mg_init_fn()
 	{
@@ -363,9 +353,7 @@ add_action('admin_menu', 'mg_add_page_fn');
 		add_settings_field('mg_show_author_role', 'Show User role:', 'mg_show_author_role', __FILE__, 'main_section');
 	}
 
-
 	// Callback functions
-
 	// TITLE		$options[mg_title]
 	function mg_title() 
 	{
@@ -373,7 +361,6 @@ add_action('admin_menu', 'mg_add_page_fn');
 		echo "<input id='mg_title' name='mg_plugin_options[mg_title]' size='40' type='text' value='{$options['mg_title']}' /><br />";
 		echo "<p><small>Please enter caption for contributors list. [Default 'Contributors:']</small></p>";
 	}
-
 
 	// SHOW AUTHOR WITH : 	$options[mg_select_author]
 	function mg_select_author_type() {
@@ -445,8 +432,6 @@ add_action('admin_menu', 'mg_add_page_fn');
 <?php
 	}
 
-	
-	
 	// Validate user data for some/all of your input fields
 	function mg_plugin_options_validate($input) 
 	{
@@ -476,8 +461,7 @@ function mg_post_contributors_shortcode_init($atts, $content) {
 				$atts
 			);
 		extract($atts);
-	
-	
+
 	// assuming you have created a page/post entitled 'debug'	
 	if ($GLOBALS['post']->post_name == 'debug') {
 		return var_export($GLOBALS['post'], TRUE );
@@ -486,7 +470,6 @@ function mg_post_contributors_shortcode_init($atts, $content) {
 	//	Get POST ID
 	$post_id = get_the_ID();
 
-	
 	// Check post id is not EMPTY
 	if ( !empty( $post_id ) ) {
 		
@@ -553,7 +536,5 @@ function mg_post_contributors_shortcode_init($atts, $content) {
 			$show_contributors_shortcode	.=	"</div>";
 		}
 	}
-
 	return $show_contributors_shortcode;
-
 }
