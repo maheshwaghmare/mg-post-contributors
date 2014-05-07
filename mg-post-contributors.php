@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The MG Post Contributor Plugin
  *
