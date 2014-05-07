@@ -58,7 +58,7 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 
 		add_meta_box(
 			'mg-contributor-class',					// Unique ID
-			esc_html__( 'Contributors', 'contributors' ),	// Title
+			'Contributors', 'contributors' ,	// Title
 			'mg_contributor_post_class_meta_box',			// Callback function
 			'post',											// Admin page (or post type)
 			'side',											// Context
