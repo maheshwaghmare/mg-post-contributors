@@ -245,7 +245,7 @@ function mg_show_contributors($content) {
 			$show_contributors   .= 	"<div class='mg-contributors'>";
 					
 					//	GET SETTING DATA
-					$options = get_option('plugin_options');
+					$options = get_option('mg_plugin_options');
 					
 					//	Set Title
 					if($options['mg_show_title'])
@@ -356,11 +356,11 @@ add_action('admin_menu', 'mg_add_page_fn');
 
 	// Define default option settings
 	function mg_add_defaults() {
-		$tmp = get_option('plugin_options');
+		$tmp = get_option('mg_plugin_options');
 		if(!is_array($tmp)) 
 		{
 			$arr = array("mg_title"=>"Contributors", "mg_show_title" => "on", "mg_select_author" => "Name + Avatar", "mg_show_author_role" => "on", "mg_restore_all" => "");
-			update_option('plugin_options', $arr);
+			update_option('mg_plugin_options', $arr);
 		}
 	}
 
@@ -368,7 +368,7 @@ add_action('admin_menu', 'mg_add_page_fn');
 	// Register our settings. Add the settings section, and settings fields
 	function mg_init_fn()
 	{
-		register_setting('plugin_options', 'plugin_options', 'plugin_options_validate' );
+		register_setting('mg_plugin_options', 'mg_plugin_options', 'mg_plugin_options_validate' );
 		add_settings_section('main_section', 'General Settings', 'section_text_fn', __FILE__);
 		add_settings_field('mg_title', 'Contributors Caption:', 'mg_title', __FILE__, 'main_section');
 		add_settings_field('mg_show_title', 'Show Caption:', 'mg_show_title', __FILE__, 'main_section');
@@ -382,15 +382,15 @@ add_action('admin_menu', 'mg_add_page_fn');
 	// TITLE		$options[mg_title]
 	function mg_title() 
 	{
-		$options = get_option('plugin_options');
-		echo "<input id='mg_title' name='plugin_options[mg_title]' size='40' type='text' value='{$options['mg_title']}' /><br />";
+		$options = get_option('mg_plugin_options');
+		echo "<input id='mg_title' name='mg_plugin_options[mg_title]' size='40' type='text' value='{$options['mg_title']}' /><br />";
 		echo "<p><small>Please enter caption for contributors list. [Default 'Contributors:']</small></p>";
 	}
 
 
 	// SHOW AUTHOR WITH : 	$options[mg_select_author]
 	function mg_select_author_type() {
-		$options = get_option('plugin_options');
+		$options = get_option('mg_plugin_options');
 		$items = array("Only Avatar", "Only Name", "Name + Avatar");
 		echo "<table><tr>";
 		foreach($items as $item) {
@@ -408,7 +408,7 @@ add_action('admin_menu', 'mg_add_page_fn');
 										break;
 			}
 			
-			echo "<td><label><img src='".$thumb."' /><br /><input ".$checked." value='$item' name='plugin_options[mg_select_author]' type='radio' /> $item</label></td>";
+			echo "<td><label><img src='".$thumb."' /><br /><input ".$checked." value='$item' name='mg_plugin_options[mg_select_author]' type='radio' /> $item</label></td>";
 
 		}
 		echo "</tr></table>";
@@ -418,18 +418,18 @@ add_action('admin_menu', 'mg_add_page_fn');
 	// SHOW/HIDE Role 		$options[mg_show_author_role]
 	function mg_show_author_role() 
 	{
-		$options = get_option('plugin_options');
+		$options = get_option('mg_plugin_options');
 		if($options['mg_show_author_role']) { $checked = ' checked="checked" '; }
-		echo "<input ".$checked." id='mg_show_author_role' name='plugin_options[mg_show_author_role]' type='checkbox' />";
+		echo "<input ".$checked." id='mg_show_author_role' name='mg_plugin_options[mg_show_author_role]' type='checkbox' />";
 		echo "<p><small>If you want to show user role. [i.e. Administrator, Author, Contributor etc.].</small></p>";
 	}	
 
 	// SHOW/HIDE TITLE 		$options[mg_show_title]
 	function mg_show_title() 
 	{
-		$options = get_option('plugin_options');
+		$options = get_option('mg_plugin_options');
 		if($options['mg_show_title']) { $checked = ' checked="checked" '; }
-		echo "<input ".$checked." id='mg_show_title' name='plugin_options[mg_show_title]' type='checkbox' />";
+		echo "<input ".$checked." id='mg_show_title' name='mg_plugin_options[mg_show_title]' type='checkbox' />";
 		echo "<p><small>If you want to hide caption of contributors list.</small></p>";
 	}	
 		
@@ -448,7 +448,7 @@ add_action('admin_menu', 'mg_add_page_fn');
 			<h2>MG Post Contributor</h2>
 
 			<form action="options.php" method="post">
-			<?php settings_fields('plugin_options'); ?>
+			<?php settings_fields('mg_plugin_options'); ?>
 			<?php do_settings_sections(__FILE__); ?>
 			<p class="submit">
 				<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
@@ -461,7 +461,7 @@ add_action('admin_menu', 'mg_add_page_fn');
 	
 	
 	// Validate user data for some/all of your input fields
-	function plugin_options_validate($input) 
+	function mg_plugin_options_validate($input) 
 	{
 		// Check our textbox option field contains no HTML tags - if so strip them out
 		$input['text_string'] =  wp_filter_nohtml_kses($input['text_string']);	
@@ -520,7 +520,7 @@ function mg_post_contributors_shortcode_init($atts, $content) {
 			$show_contributors_shortcode   .= 	"<div class='mg-contributors-widget'>";
 					
 					//	GET SETTING DATA
-					$options = get_option('plugin_options');
+					$options = get_option('mg_plugin_options');
 					
 					//	Set Title
 					if($caption)
