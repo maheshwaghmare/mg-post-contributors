@@ -17,7 +17,6 @@
  * @license         GNU General Public License, version 2
  * @copyright       2014 MG Web Themes
  */
- 
 
 
  /**
@@ -29,8 +28,6 @@
 // add meta box actions
 add_action( 'load-post.php', 'mg_contributor_metabox_setup' );
 add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
-
-
 
 	 /**
 	 * Add meta box hooks (add_meta_boxes, save_post)
@@ -124,11 +121,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 		// Meta Box structure ENDs
 
 
-
-
-
-
-
 	 /**
 	 * ('save_post') HOOK functions definition to save meta box values
 	 *
@@ -191,8 +183,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
 			delete_post_meta( $post_id, $meta_key, $meta_value );
 	}
 
-
-
 	
  /**
  * Add Filter to generate contributors list
@@ -203,8 +193,6 @@ add_action( 'load-post-new.php', 'mg_contributor_metabox_setup' );
  
  add_filter( 'the_content', 'mg_show_contributors' );	
 
-
- 
  /**
  * Show contributors list
  *
@@ -336,10 +324,6 @@ function mg_enqueue_style() {
 
 add_action( 'wp_enqueue_scripts', 'mg_enqueue_style' );
 
-	
-	
-
-
  /**
  * Add Setting hooks
  * User can set visual design of contributors.
@@ -470,10 +454,6 @@ add_action('admin_menu', 'mg_add_page_fn');
 		$input['text_string'] =  wp_filter_nohtml_kses($input['text_string']);	
 		return $input; // return validated input
 	}
-	
-
-
-
 
  /**
  * Show contributors list with SHORTCODE [mg-post-contributors]
@@ -577,10 +557,3 @@ function mg_post_contributors_shortcode_init($atts, $content) {
 	return $show_contributors_shortcode;
 
 }
-
-
-
-
-
-	
-?>
