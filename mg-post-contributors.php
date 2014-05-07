@@ -329,9 +329,12 @@ function mg_show_contributors($content) {
 }
 
 
+//	ENQUEUE stylesheet ('style.css')
+function mg_enqueue_style() {
+	wp_enqueue_style( 'mg_styles', plugins_url( '/css/style.css', false ) );
+}
 
-//	ENQUEUE stylesheet ('style.css')	
-wp_enqueue_style( 'wp_enqueue_scripts', plugins_url( '/css/style.css', __FILE__ ) );
+add_action( 'wp_enqueue_scripts', 'mg_enqueue_style' );
 
 	
 	
