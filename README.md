@@ -1,4 +1,4 @@
-mg-post-contributors
+MG Post Contributors
 ====================
 
 This wordpress plugin helps admin user to select multiple authors of the post and show them after post content at front end.
