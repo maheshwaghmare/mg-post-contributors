@@ -1,0 +1,3 @@
+== Changelog ==
+= Version: 1.4. Release =
+IMPROVEMENT: User can enable/disable social profile links or profile image uploader from 'Your Profile' window.

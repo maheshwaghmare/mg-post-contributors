@@ -1,6 +1,6 @@
 === MG Post Contributors ===
 
-Contributors: Mahesh901122
+Contributors: Mahesh901122, shilpapapade
 Plugin Name: MG Post Contributors 
 Plugin URI: http://wordpress.org/plugins/mg-post-contributors
 Tags: post, author, contributors
@@ -9,21 +9,17 @@ Author: Mahesh Waghmare
 Github URI: https://github.com/maheshwaghmare/mg-post-contributors
 Donate link: 
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.3.
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
 
-This plugin help admin user to select multiple authors or contributors of the post, By simply selecting those authors or contributors from post editor window. 
-This plugin supports existing post and for new posts. 
+Use this plugin to set multiple contributors for single post. Simply selecting contributors check boxes at Post Editor. It show list of users with checkboxes and show them at POST. Getting started <strong> 1) </strong> Click 'Activate'  <strong> 2)</strong>  Go to  POST->Add New OR Select existing one i.e. POST->All Posts and select Post <strong> 3) </strong> Choose  'Contributors' and click 'Publish'. To check result just click View Post.
 
 You can set how contributors shown after post contents by: "Setting->MG Post Contributor" and select options how do you want to show contributors on blog. 
-
-You can also use <code>[mg-post-testimonial]</code> shortcode to show contributors list at sidebar.
-
 
 Development for this plugin can be found on 
 GitHub: https://github.com/maheshwaghmare/mg-post-contributors 
@@ -65,6 +61,8 @@ Login to http://demo.mgwebthemes.com/wp-admin/  to use live "MG Post Contributor
     Password : demo 
 
 	
+[youtube https://www.youtube.com/watch?v=x03jmQ9ajUQ]
+	
 == Installation ==
 
 1. Upload `mg-post-contributors` to the `/wp-content/plugins/` directory
@@ -90,6 +88,35 @@ Login to http://demo.mgwebthemes.com/wp-admin/  to use live "MG Post Contributor
 
   
 == Changelog ==
+= Version: 1.4. Release =
+IMPROVEMENT: User can enable/disable social profile links or profile image uploader from 'Your Profile' window.
+
+= Version: 1.3. Release =
+ADD: Upload Author Image option for user
+ADD: Carousel support option for authors list
+
+= Version: 1.2. Release =
+ADD: Plugin / Themes Info list
+ADD: 'Custom Before/After' to add custom HTML code Before / After Contributors list
+ADD: 'Advanced Options' to add custom JS, CSS, HTML Code.
+ADD: 'Mega Styling' options for Author meta data. (Image, Bio, Email, Website etc.)
+ADD: Customize Option Panel Layout
+ADD: Multiple 'Hide / Show' Meta data options for user.
+
+= 12/09/2014 =
+ADD: Show Multiple author meta data at contributors list. (Email, Bio, Website, Social Links)
+ADD: Various social link options at user profile window. (Facebook, Twitter, Google Plus etc)
+ADD: 'Author Block View' to select author block view layout either 'Horizontal' or 'Verticle'. Default: Horizontal.
+ADD: 'Exclude Roles' option for user to skip unwanted roles meta box list
+ADD: Add 'Enable List' checkbox to enable contributors list
+FIX: Hide empty roles which have not any author
+
+= Version: 1.1. Release =
+DISABLE: Shortocode temporary
+ADD: Dynamic css for Title, Block and Avatars.
+ADD: Redux Framework for visual interface styling.
+FIX: Remove mg post contributors page from setting menu.
+
 = 2. - 10/03/2014 =
 * Tweak - Add admin panel
 

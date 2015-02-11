@@ -1,0 +1,50 @@
+.rating, .result{
+	float: left;
+	width: auto;
+}
+
+.result {
+    -moz-transform: rotate(90deg);
+    -moz-transition: all 1s ease 0s;
+    border: 1px solid #DDDDDD;
+    border-radius: 20% 20% 20% 20%;
+    color: #7B7B8E;
+    font-size: 50px;
+    height: 60px;
+    margin-left: 30px;
+    padding: 10px 5px 21px 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 60px;
+    transition: 1s;
+}
+.star {
+	transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-webkit-transition: all 1s ease 0s;
+    background-image: -moz-linear-gradient(#FFE88C, #FCE204);
+    border: 1px solid #F9ED7F;
+    border-radius: 50% 50% 50% 50%;
+    color: #D9B02B;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 10px;
+    line-height: 1;
+    padding: 15px;
+    width: 10px;
+}
+.star:hover {
+    background-image: -moz-radial-gradient(#FED846, #FFC818);
+}
+
+.plugin { margin-right: 15px; float: left; border: 1px solid rgb(221, 221, 221); width: 40%; padding: 15px; border-radius: 5px 5px 5px 5px; }
+.plugin .title { color: #8DB18D;
+    font-size: 20px;
+    margin: 0;
+    padding: 0; }
+.plugin .description { margin: 0pt; font-size: 12px; text-align: justify;}
+.plugin .links { font-size: 11px; }
+.plugin .links a { text-decoration: none; background: none repeat scroll 0% 0% rgb(252, 217, 120); color: rgb(152, 124, 35); border-radius: 3px 3px 3px 3px; padding: 1px 5px; }
