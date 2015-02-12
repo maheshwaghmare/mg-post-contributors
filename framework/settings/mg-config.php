@@ -280,7 +280,7 @@ if (!class_exists('mgpc')) {
                 'heading'   => __('Meta Box Settings:', 'mgpc'),
                 'desc'      => __('<p class="description">Change Meta Box Structure</p>', 'mgpc'),
                 'fields'    => array(
-                    array(
+                    /*array(
                         'id'        => 'opt-multi-select',
                         'type'      => 'select',
                         'multi'     => true,
@@ -302,7 +302,7 @@ if (!class_exists('mgpc')) {
                             'title'     => 'Assign Post Types',
                             'content'   => 'Assign custom post types for contributors list. <i>Default: post</i>.',
                         )
-                    ),
+                    ),*/
                     array(
                         'id'        => 'exclude-roles',
                         'type'      => 'select',
