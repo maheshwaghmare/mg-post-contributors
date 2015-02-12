@@ -1726,7 +1726,7 @@ if (!class_exists('mgpc')) {
                 'async_typography'  => false,                    // Use a asynchronous font on the front end or font string
                 'admin_bar'         => true,                    // Show the panel pages on the admin bar
                 'global_variable'   => '',                      // Set a different name for your global variable other than the opt_name
-                'dev_mode'          => true,                    // Show the time the page took to load, etc
+                'dev_mode'          => false,                    // Show the time the page took to load, etc
                 'customizer'        => false,                    // Enable basic customizer support
                 //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
                 //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
